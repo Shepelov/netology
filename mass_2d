@@ -14,7 +14,7 @@ int main()
         {8, 3, -13, 4, 56, 52}
     };
 
-    int min{}, max{}, min_index_i{}, min_index_j{}, max_index_i{}, max_index_j{};
+    int min{array[0][0]}, max{array[0][0]}, min_index_i{}, min_index_j{}, max_index_i{}, max_index_j{};
 
     std::wcout << L"Массив:" << std::endl;
 
