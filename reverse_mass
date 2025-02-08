@@ -12,7 +12,7 @@ int main(int argc, char** argv){
 
     int mass[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    int massSize = sizeof (mass) / sizeof (int);
+    constexpr int massSize = sizeof (mass) / sizeof (int);
     std::wcout << L"Массив до изменения: ";
     print (mass, massSize);
     reverse (mass, massSize);
