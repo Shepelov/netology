@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <clocale>
 
-void reverse (int* mass, int massSize);
+void reverse (int* mass, const int massSize);
 void print (int* mass, int massSize);
 
 int main(int argc, char** argv){
@@ -20,7 +20,7 @@ int main(int argc, char** argv){
     print (mass, massSize);
 }
 
-void reverse (int* mass, int massSize){
+void reverse (int* mass, const int massSize){
     int tempMass[massSize];
     for (int element{}; element < massSize; ++element){
         tempMass[element] = mass[element];
