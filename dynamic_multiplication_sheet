@@ -12,18 +12,20 @@ int main(int argc, char** argv){
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "Rus");
 
-    int* rows {new int};
-    int* columns {new int};
+    int rows;
+    int columns;
 
-    std::wcout << L"Введите количество cтолбцов: ";
-    std::cin >> *columns;
-    std::wcout << L"Введите количество строк: ";
-    std::cin >> *rows;
-    std::wcout << L"Таблица умножения: " << std::endl;
-    int** multiplicationSheet = create_two_dim_array(*rows, *columns);
-    fill_two_dim_array(multiplicationSheet, *rows, *columns);
-    print_two_dim_array(multiplicationSheet, *rows, *columns);
-    delete_two_dim_array(multiplicationSheet, *rows, *columns);
+    std::cout << "Введите количество cтолбцов: ";
+    std::cin >> columns;
+    std::cout << "Введите количество строк: ";
+    std::cin >> rows;
+    std::cout << "Таблица умножения: " << std::endl;
+    int** multiplicationSheet = create_two_dim_array(rows, columns);
+    fill_two_dim_array(multiplicationSheet, rows, columns);
+    print_two_dim_array(multiplicationSheet, rows, columns);
+    delete_two_dim_array(multiplicationSheet, rows, columns);
+
+    return 0;
 }
 
 int** create_two_dim_array(int rows, int columns){
