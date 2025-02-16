@@ -23,13 +23,14 @@ int main()
     //инициализируем игровое поле
     bool** gameField = new bool* [gameFieldHeight];
     bool** gameFieldLast = new bool* [gameFieldHeight];
-    for (int i{}; i < gameFieldWidth; ++i){
+    for (int i{}; i < gameFieldHeight; ++i){
         gameField[i] = new bool [gameFieldWidth];
         gameFieldLast[i] = new bool [gameFieldWidth];
     }
     for (int i{}; i < gameFieldHeight; ++i){
         for (int j{}; j < gameFieldWidth; ++j){
             gameField[i][j] = false;
+            gameFieldLast[i][j] = false;
         }
     }
 
