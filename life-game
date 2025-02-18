@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
 #include <cstdlib>
 #include <unistd.h>
 
@@ -10,14 +12,27 @@ bool cellStatus(bool** gameField, int coordY, int coordX, int height, int width)
 
 int main()
 {
-    //входные данные - временный блок, потом данные будут загружаться из файла
-    int gameFieldHeight {20};
-    int gameFieldWidth {30};
-    int* startCellsCoordsX = new int[10]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int* startCellsCoordsY = new int[10]{0, 1, 1, 3, 4, 3, 6, 7, 8, 9};
+    int gameFieldHeight{};
+    int gameFieldWidth{};
+    vector<int> startCellsCoords;
+    int aliveCells{};
+
+    std::ifstream file {"in.txt"};
+    if (file.is_open()){
+        file >> gameFieldHeight;
+        file >> gameFieldWidth;
+        int temp;
+        while (file >> temp){
+            startCellsCoords.push_back(temp);
+            ++aliveCells;
+        }
+    }
+    else{
+        std::cout << "Start data file not found!" << std::endl;;
+        std::exit(0);
+    }
 
     bool change{false}; //флаг внесения изменений
-    int aliveCells{10};
     int generation{1};
 
     //инициализируем игровое поле
@@ -34,9 +49,9 @@ int main()
         }
     }
 
-    //расставляем живые клетки из двух массивов с координатами - временно, потом будут загружаться из файла
-    for (int i{}; i < 10; ++i){
-        gameField[startCellsCoordsY[i]][startCellsCoordsX[i]] = true;
+    //расставляем живые клетки из двух векторов с координатами
+    for (int i{}; i < static_cast<int>(startCellsCoords.size()/2); ++i){
+        gameField[startCellsCoords[i*2]][startCellsCoords[i*2+1]] = true;
     }
 
     visualisation(gameField, gameFieldHeight, gameFieldWidth);
@@ -57,20 +72,24 @@ int main()
                 if(gameFieldLast[i][j]){
                     if(aliveCellsAround(gameFieldLast, i, j, gameFieldHeight, gameFieldWidth) < 2 || aliveCellsAround(gameFieldLast, i, j, gameFieldHeight, gameFieldWidth) >3){
                         gameField[i][j] = false;
-                        --aliveCells;
                         change = true;
                     }
                 }
                 else{
                     if(aliveCellsAround(gameFieldLast, i, j, gameFieldHeight, gameFieldWidth) == 3){
                         gameField[i][j] = true;
-                        ++aliveCells;
                         change = true;
                     }
                 }
             }
         }
         ++generation;
+        aliveCells = 0;
+        for (int i{}; i < gameFieldHeight; ++i){
+            for (int j{}; j < gameFieldWidth; ++j){
+                if(gameField[i][j]) ++aliveCells;
+            }
+        }
         visualisation(gameField, gameFieldHeight, gameFieldWidth);
         std::cout << "Generation: " << generation << ". Alive cells: " << aliveCells << std::endl;
         sleep(1);
