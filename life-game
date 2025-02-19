@@ -32,7 +32,7 @@ int main()
         std::exit(0);
     }
 
-    bool change{false}; //флаг внесения изменений
+    bool change{true}; //флаг внесения изменений
     int generation{1};
 
     //инициализируем игровое поле
@@ -58,7 +58,7 @@ int main()
     std::cout << "Generation: " << generation << ". Alive cells: " << aliveCells << std::endl;
     sleep(1);
 
-    do{
+    while(change == true && aliveCells > 0){
         for (int i{}; i < gameFieldHeight; ++i){
             for (int j{}; j < gameFieldWidth; ++j){
                 gameFieldLast[i][j] = gameField[i][j];
@@ -94,7 +94,6 @@ int main()
         std::cout << "Generation: " << generation << ". Alive cells: " << aliveCells << std::endl;
         sleep(1);
     }
-    while(change == true && aliveCells > 0);
 
     if(aliveCells == 0){
         std::cout << "All cells are dead! Game over!";
