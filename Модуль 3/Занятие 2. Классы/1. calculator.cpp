@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <clocale>
 
 class Calculator{
@@ -68,19 +68,19 @@ int main(int argc, char argv[])
 
 	while (true){
 		do{
-			std::cout << "Ââåäèòå ïåðâîå ÷èñëî: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 			std::cin >> num;
 			if (!calc.set_num1(num)){
-				std::cout << "Íåâåðíûé ââîä!" << std::endl;
+				std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
 			}	
 		}
 		while (!calc.set_num1(num));
 
 		do{
-			std::cout << "Ââåäèòå âòîðîå ÷èñëî: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 			std::cin >> num;
 			if (!calc.set_num2(num)){
-				std::cout << "Íåâåðíûé ââîä!" << std::endl;
+				std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
 			}	
 		}
 		while (!calc.set_num2(num));

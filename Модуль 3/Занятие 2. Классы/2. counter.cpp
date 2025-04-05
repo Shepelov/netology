@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <clocale>
 
 class Counter{
@@ -35,10 +35,10 @@ int main(int argc, char argv[])
 	Counter* cnt;
 	char command;
 
-	std::cout << "Âû õîòèòå óêàçàòü íà÷àëüíîå çíà÷åíèå ñ÷åò÷èêà? Ââåäèòå \"Y\" èëè \"N\": ";
+	std::cout << "Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÐ°? Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ \"Y\" Ð¸Ð»Ð¸ \"N\": ";
 	std::cin >> start_initial;
 	if (start_initial == 'Y'){
-		std::cout << "Ââåäèòå íà÷àëüíîå çíà÷åíèå ñ÷åò÷èêà (öåëîå ÷èñëî): ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÐ° (Ñ†ÐµÐ»Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾): ";
 		std::cin >> init;
 		cnt = new Counter(init);
 	}
@@ -47,7 +47,7 @@ int main(int argc, char argv[])
 	}
 
 	do{
-		std::cout << "Ââåäèòå êîìàíäó (\"+\", \"-\", \"=\" èëè \"x\"): ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ (\"+\", \"-\", \"=\" Ð¸Ð»Ð¸ \"x\"): ";
 		std::cin >> command;
 		switch (command){
 		case 'x':
@@ -55,15 +55,15 @@ int main(int argc, char argv[])
 		case '+':
 		case'-':
 		case '=':
-			std::cout << "Çíà÷åíèå ñ÷åò÷èêà: " << cnt->command(command) << std::endl << std::endl;
+			std::cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÐ°: " << cnt->command(command) << std::endl << std::endl;
 			break;
 		default:
-			std::cout << "Âû ââåëè íåêîððåêòíóþ êîìàíäó!" << std::endl << std::endl;
+			std::cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½ÑƒÑŽ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ!" << std::endl << std::endl;
 			break;
 		}
 	}
 	while (command != 'x');
-	std::cout << "Ðàáîòà ïðîãðàììû çàâåðøåíà! Äî ñâèäàíèÿ!" << std::endl;
+	std::cout << "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°! Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ!" << std::endl;
 
 	return 0;
 }
