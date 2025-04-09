@@ -10,12 +10,8 @@ private:
 	int houseNumber;
 	int flatNumber;
 public:
-	void setAddress (std::string city, std::string street, int houseNumber, int flatNumber){
-		this->city = city;
-		this->street = street;
-		this->houseNumber = houseNumber;
-		this->flatNumber = flatNumber;
-	}
+	Address (): city("N/A"), street("N/A"), houseNumber(0), flatNumber(0) {}
+	Address (std::string city, std::string street, int houseNumber, int flatNumber): city(city), street(street), houseNumber(houseNumber), flatNumber(flatNumber){}
 	std::string getAddress(){
 		return city + ", " + street + ", " + std::to_string(houseNumber) + ", " + std::to_string(flatNumber);
 	}
@@ -46,7 +42,7 @@ int main(int argc, char argv[])
 			getline(input, street);
 			getline(input, houseNumber);
 			getline(input, flatNumber);
-			addresses[i].setAddress(city, street, std::stoi(houseNumber), std::stoi(flatNumber));
+			addresses[i] = *new Address (city, street, std::stoi(houseNumber), std::stoi(flatNumber));
 		}
 		input.close();
 
