@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <clocale>
 
 class Figure{
@@ -30,10 +30,10 @@ int main(int argc, char argv[])
 	Triangle triangle;
 	Rectangle rectangle;
 
-	std::cout << "Êîëè÷åñòâî ñòîðîí: " << std::endl;
-	std::cout << "Ôèãóðà: " << figure.getSides() << std::endl;
-	std::cout << "Òðåóãîëüíèê: " << triangle.getSides() << std::endl;
-	std::cout << "×åòûðåõóãîëüíèê: " << rectangle.getSides() << std::endl;
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½: " << std::endl;
+	std::cout << "Ð¤Ð¸Ð³ÑƒÑ€Ð°: " << figure.getSides() << std::endl;
+	std::cout << "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº: " << triangle.getSides() << std::endl;
+	std::cout << "Ð§ÐµÑ‚Ñ‹Ñ€ÐµÑ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº: " << rectangle.getSides() << std::endl;
 
 	return 0;
 }
