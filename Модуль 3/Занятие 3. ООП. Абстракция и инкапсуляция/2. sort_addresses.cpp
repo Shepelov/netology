@@ -61,7 +61,7 @@ int main(int argc, char argv[])
 			getline(input, street);
 			getline(input, houseNumber);
 			getline(input, flatNumber);
-			addresses[i] = *new Address (city, street, std::stoi(houseNumber), std::stoi(flatNumber));
+			addresses[i] = Address (city, street, std::stoi(houseNumber), std::stoi(flatNumber));
 		}
 		input.close();
 
