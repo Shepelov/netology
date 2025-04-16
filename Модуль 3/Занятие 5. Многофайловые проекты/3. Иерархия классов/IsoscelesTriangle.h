@@ -1,4 +1,4 @@
-#ifndef ISOSCELESTRIANGLE_H
+п»ї#ifndef ISOSCELESTRIANGLE_H
 #define ISOSCELESTRIANGLE_H
 
 #include "Triangle.h"
@@ -6,7 +6,7 @@
 class IsoscelesTriangle : public Triangle {
 public:
 	IsoscelesTriangle(int a, int b, int A, int B)
-		: Triangle(a, b, a, A, B, A, "Равнобедренный треугольник") {}
+		: Triangle(a, b, a, A, B, A, "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє") {}
 };
 
 #endif

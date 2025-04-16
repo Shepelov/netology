@@ -1,4 +1,4 @@
-#ifndef COUNTER_H
+﻿#ifndef COUNTER_H
 #define COUNTER_H
 
 class Counter

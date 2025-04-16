@@ -1,10 +1,10 @@
-#include "Triangle.h"
+ï»¿#include "Triangle.h"
 
 #include <iostream>
 
 void Triangle::print_info() {
 	std::cout << type << std::endl;
-	std::cout << "Ñòîðîíû: a = " << a << ", b = " << b << ", c = " << c << std::endl;
-	std::cout << "Óãëû: A = " << A << ", B = " << B << ", C = " << C << std::endl;
+	std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: a = " << a << ", b = " << b << ", c = " << c << std::endl;
+	std::cout << "Ð£Ð³Ð»Ñ‹: A = " << A << ", B = " << B << ", C = " << C << std::endl;
 	std::cout << std::endl;
 }

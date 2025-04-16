@@ -1,10 +1,10 @@
-#include "Quadangle.h"
+ï»¿#include "Quadangle.h"
 
 #include <iostream>
 
 void Quadangle::print_info() {
 	std::cout << type << std::endl;
-	std::cout << "Ñòîðîíû: a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << std::endl;
-	std::cout << "Óãëû: A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << std::endl;
+	std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << std::endl;
+	std::cout << "Ð£Ð³Ð»Ñ‹: A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << std::endl;
 	std::cout << std::endl;
 }

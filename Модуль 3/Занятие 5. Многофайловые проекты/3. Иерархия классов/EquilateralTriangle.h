@@ -1,4 +1,4 @@
-#ifndef EQUILATERALTRIANGLE_H
+п»ї#ifndef EQUILATERALTRIANGLE_H
 #define EQUILATERALTRIANGLE_H
 
 #include "Triangle.h"
@@ -6,7 +6,7 @@
 class EquilateralTriangle : public Triangle {
 public:
 	EquilateralTriangle(int a)
-		: Triangle(a, a, a, 60, 60, 60, "Равносторонний треугольник") {}
+		: Triangle(a, a, a, 60, 60, 60, "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє") {}
 };
 
 #endif

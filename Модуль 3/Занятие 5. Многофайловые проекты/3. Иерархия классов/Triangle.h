@@ -1,4 +1,4 @@
-#ifndef TRIANGLE_H
+п»ї#ifndef TRIANGLE_H
 #define TRIANGLE_H
 
 #include "Shape.h"
@@ -8,7 +8,7 @@
 class Triangle : public Shape
 {
 private:
-	std::string type{ "Треугольник" };
+	std::string type{ "РўСЂРµСѓРіРѕР»СЊРЅРёРє" };
 	int a;
 	int b;
 	int c;

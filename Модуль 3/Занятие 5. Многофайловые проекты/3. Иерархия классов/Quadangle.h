@@ -1,4 +1,4 @@
-#ifndef QUADANGLE_H
+п»ї#ifndef QUADANGLE_H
 #define QUADANGLE_H
 #include "Shape.h"
 
@@ -6,7 +6,7 @@
 class Quadangle : public Shape
 {
 private:
-	std::string type{ "Четырехугольник" };
+	std::string type{ "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє" };
 	int a;
 	int b;
 	int c;

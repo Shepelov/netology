@@ -1,4 +1,4 @@
-#ifndef PARALLELOGRAM_H
+п»ї#ifndef PARALLELOGRAM_H
 #define PARALLELOGRAM_H
 
 #include "Quadangle.h"
@@ -6,7 +6,7 @@
 class Parallelogram : public Quadangle {
 public:
 	Parallelogram(int a, int b, int A, int B)
-		: Quadangle(a, b, a, b, A, B, A, B, "Параллелограмм") {}
+		: Quadangle(a, b, a, b, A, B, A, B, "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј") {}
 };
 
 #endif

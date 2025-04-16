@@ -1,21 +1,21 @@
-#include "math.h"
+п»ї#include "math.h"
 
 #include <iostream>
 #include <string>
 
 void Math::summ(int value1, int value2) {
-	std::cout << std::to_string(value1) + " плюс " + std::to_string(value2) + " = " + std::to_string(value1 + value2);
+	std::cout << std::to_string(value1) + " РїР»СЋСЃ " + std::to_string(value2) + " = " + std::to_string(value1 + value2);
 }
 
 void Math::diff(int value1, int value2) {
-	std::cout << std::to_string(value1) + " минус " + std::to_string(value2) + " = " + std::to_string(value1 - value2);
+	std::cout << std::to_string(value1) + " РјРёРЅСѓСЃ " + std::to_string(value2) + " = " + std::to_string(value1 - value2);
 }
 void Math::mult(int value1, int value2) {
-	std::cout << std::to_string(value1) + " умножить на " + std::to_string(value2) + " = " + std::to_string(value1 * value2);
+	std::cout << std::to_string(value1) + " СѓРјРЅРѕР¶РёС‚СЊ РЅР° " + std::to_string(value2) + " = " + std::to_string(value1 * value2);
 }
 
 void Math::div(int value1, int value2) {
-	std::cout << std::to_string(value1) + " разделить на " + std::to_string(value2) + " = " + std::to_string(value1 / value2);
+	std::cout << std::to_string(value1) + " СЂР°Р·РґРµР»РёС‚СЊ РЅР° " + std::to_string(value2) + " = " + std::to_string(value1 / value2);
 }
 
 void Math::degr(int value1, int value2) {
@@ -29,5 +29,5 @@ void Math::degr(int value1, int value2) {
 		}
 	}
 
-	std::cout << std::to_string(value1) + " в степени " + std::to_string(value2) + " = " + std::to_string(result);
+	std::cout << std::to_string(value1) + " РІ СЃС‚РµРїРµРЅРё " + std::to_string(value2) + " = " + std::to_string(result);
 }
