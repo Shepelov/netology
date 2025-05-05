@@ -22,44 +22,8 @@ public:
 		}
 	}
 
-	bool operator != (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) != (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
 	bool operator < (Fraction right) {
 		if ((static_cast<double>(numerator_) / denominator_) < (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	bool operator > (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) > (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	bool operator <= (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) <= (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	bool operator >= (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) >= (static_cast<double>(right.numerator_) / right.denominator_)) {
 			return true;
 		}
 		else {
@@ -74,10 +38,10 @@ int main()
 	Fraction f2(6, 11);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 == f2) ? " != " : " not != ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 < f2) ? " < " : " not < ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 > f2) ? " > " : " not > ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 <= f2) ? " <= " : " not <= ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 >= f2) ? " >= " : " not >= ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 < f2) && !(f1 == f2) ? " > " : " not > ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 < f2) || (f1 == f2) ? " <= " : " not <= ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 < f2) ? " >= " : " not >= ") << "f2" << '\n';
 	return 0;
 }
