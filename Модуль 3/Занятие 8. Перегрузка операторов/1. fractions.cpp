@@ -6,29 +6,38 @@ private:
 	int numerator_;
 	int denominator_;
 
-public:
-	Fraction(int numerator, int denominator)
+	double decimal(const Fraction& fraction) const
 	{
-		numerator_ = numerator;
-		denominator_ = denominator;
+		return (static_cast<double>(fraction.numerator_) / fraction.denominator_);
 	}
+public:
+	Fraction(int numerator, int denominator) :
+		numerator_ (numerator),
+		denominator_ (denominator)
+		{}
 
 	bool operator == (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) == (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return (decimal(*this) == decimal(right));
 	}
 
 	bool operator < (Fraction right) {
-		if ((static_cast<double>(numerator_) / denominator_) < (static_cast<double>(right.numerator_) / right.denominator_)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return (decimal(*this) < decimal(right));
+	}
+
+	bool operator > (Fraction right) {
+		return !(decimal(*this) == decimal(right)) && !(decimal(*this) < decimal(right));
+	}
+
+	bool operator != (Fraction right) {
+		return !(decimal(*this) == decimal(right));
+	}
+
+	bool operator <= (Fraction right) {
+		return (decimal(*this) == decimal(right)) && (decimal(*this) < decimal(right));
+	}
+
+	bool operator >= (Fraction right) {
+		return (decimal(*this) == decimal(right)) && !(decimal(*this) < decimal(right));
 	}
 };
 

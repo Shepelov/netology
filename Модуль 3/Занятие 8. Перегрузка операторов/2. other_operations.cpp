@@ -9,22 +9,24 @@ private:
 	int denominator_;
 
 	void reduction(int& numerator, int& denominator) {
-		int min = numerator < denominator ? numerator : denominator;
-		int max = numerator > denominator ? numerator : denominator;
+		int min = numerator <= denominator ? numerator : denominator;
+		int max = numerator >= denominator ? numerator : denominator;
 		int remainder;
-		int nod{0};
- 
-		do {
-			remainder = max % min;
-			if (remainder != 0) {
-				nod = remainder;
-			}
-			else {
-				nod = abs(min);
-			}
-			max = min;
-			min = remainder;
-		} while (remainder != 0);
+		int nod{ 0 };
+
+		if (min != 0) {
+			do {
+				remainder = max % min;
+				if (remainder != 0) {
+					nod = remainder;
+				}
+				else {
+					nod = abs(min);
+				}
+				max = min;
+				min = remainder;
+			} while (remainder != 0);
+		}
 
 		if (nod != 0) {
 			numerator = numerator / nod;
@@ -37,20 +39,18 @@ public:
 	{
 		numerator_ = numerator;
 		denominator_ = denominator;
+		reduction(numerator_, denominator_);
 	}
 
 	Fraction operator + (Fraction right) {
 		int numerator_result = (numerator_ * right.denominator_) + (right.numerator_ * denominator_);
 		int denominator_result = denominator_ * right.denominator_;
-		reduction(numerator_result, denominator_result);
-
 		return Fraction(numerator_result, denominator_result);
 	}
 
 	Fraction operator - (Fraction right) {
 		int numerator_result = (numerator_ * right.denominator_) - (right.numerator_ * denominator_);
 		int denominator_result = denominator_ * right.denominator_;
-		reduction(numerator_result, denominator_result);
 
 		return Fraction(numerator_result, denominator_result);
 	}
@@ -58,7 +58,6 @@ public:
 	Fraction operator * (Fraction right) {
 		int numerator_result = numerator_ * right.numerator_;
 		int denominator_result = denominator_ * right.denominator_;
-		reduction(numerator_result, denominator_result);
 
 		return Fraction(numerator_result, denominator_result);
 	}
@@ -66,32 +65,27 @@ public:
 	Fraction operator / (Fraction right) {
 		int numerator_result = numerator_ * right.denominator_;
 		int denominator_result = denominator_ * right.numerator_;
-		reduction(numerator_result, denominator_result);
 
 		return Fraction(numerator_result, denominator_result);
 	}
 
 	Fraction& operator ++ () {
 		this->numerator_ = numerator_ + denominator_;
-		reduction(this->numerator_, this->denominator_);
 		return *this;
 	}
 
 	Fraction& operator -- () {
 		this->numerator_ = numerator_ - denominator_;
-		reduction(this->numerator_, this->denominator_);
 		return *this;
 	}
 
 	Fraction& operator ++ (int) {
 		this->numerator_ = numerator_ + denominator_;
-		reduction(this->numerator_, this->denominator_);
 		return *this;
 	}
 
 	Fraction& operator -- (int) {
 		this->numerator_ = numerator_ - denominator_;
-		reduction(this->numerator_, this->denominator_);
 		return *this;
 	}
 
