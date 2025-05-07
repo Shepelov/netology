@@ -33,11 +33,11 @@ public:
 	}
 
 	bool operator <= (Fraction right) {
-		return (decimal(*this) == decimal(right)) && (decimal(*this) < decimal(right));
+		return (decimal(*this) == decimal(right)) || (decimal(*this) < decimal(right));
 	}
 
 	bool operator >= (Fraction right) {
-		return (decimal(*this) == decimal(right)) && !(decimal(*this) < decimal(right));
+		return !(decimal(*this) < decimal(right));
 	}
 };
 
