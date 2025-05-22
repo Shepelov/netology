@@ -1,0 +1,153 @@
+﻿#include "Camel.h"
+#include "FastCamel.h"
+#include "Centaur.h"
+#include "AllTerrainBoots.h"
+#include "MagicCarpet.h"
+#include "Eagle.h"
+#include "Broom.h"
+
+#include <iostream>
+#include <Windows.h>
+#include <vector>
+
+struct Result {
+    std::string name;
+    int time;
+};
+
+int main(int argc, char* argv)
+{
+    setlocale(LC_ALL, "Rus");
+
+    int raceType;
+    int distance;
+    std::vector<Result> results;
+    int select;
+
+
+    std::cout << "Добро пожаловать в гоночный симулятор!" << std::endl;
+    std::cout << "1. Гонка для наземного транспорта" << std::endl;
+    std::cout << "2. Гонка для воздушного транспорта" << std::endl;
+    std::cout << "3. Гонка для наземного и воздушного транспорта" << std::endl;
+    do {
+        std::cout << "Выберите тип гонки: ";
+        std::cin >> raceType;
+        if (raceType < 1 || raceType > 3) {
+            std::cout << "Вы ввели неверное значение!" << std::endl;
+        }
+    } while (raceType < 1 || raceType > 3);
+    std::cout << "Укажите длину дистанции (должна быть положительным целым числом): ";
+    std::cin >> distance;
+
+    Camel* camel = new Camel(distance);
+    FastCamel* fastCamel = new FastCamel(distance);
+    Centaur* centaur = new Centaur (distance);
+    AllTerrainBoots* allTerrainBoots = new AllTerrainBoots (distance);
+    MagicCarpet* magicCarpet = new MagicCarpet (distance);
+    Eagle* eagle = new Eagle (distance);
+    Broom* broom = new Broom (distance);
+
+    do {
+        if (results.size() < 2) {
+            std::cout << "Должно быть зарегистрировано хотя бы 2 транспортных средства" << std::endl;
+        }
+        std::cout << "1. Зарегистрировать транспорт" << std::endl;
+        if (results.size() >= 2) {
+            std::cout << "2. Начать гонку" << std::endl;
+        }
+        std::cout << "Выберите действие: ";
+        std::cin >> select;
+        if (select == 1) {
+            do {
+                std::cout << "Гонка для ";
+                switch (raceType) {
+                case 1:
+                    std::cout << "наземного";
+                    break;
+                case 2:
+                    std::cout << "воздушного";
+                    break;
+                case 3:
+                    std::cout << "наземного и воздушного";
+                    break;
+                }
+                std::cout << " транспорта. Расстояние: " << distance << std::endl;
+                if (results.size() != 0) {
+                    std::cout << "Зарегистрированные транспортные средства: ";
+                    for (int i = 0; i < results.size(); ++i) {
+                        std::wcout << results[i].name << ", ";
+                        std::cout << std::endl;
+                    }
+                }
+                std::cout << "1. " << allTerrainBoots->getName() << std::endl;
+                std::cout << "2. " << broom->getName() << std::endl;
+                std::cout << "3. " << camel->getName() << std::endl;
+                std::cout << "4. " << centaur->getName() << std::endl;
+                std::cout << "5. " << eagle->getName() << std::endl;
+                std::cout << "6. " << fastCamel->getName() << std::endl;
+                std::cout << "7. " << magicCarpet->getName() << std::endl;
+                std::cout << "0. Закончить регистрацию" << std::endl;
+                std::cout << "Выберите транспорт или 0 для окончания процесса регистрации: ";
+                std::cin >> select;
+                switch (select) {
+                case 1:
+                    if (allTerrainBoots->regist()) {
+                        results.push_back(Result{ allTerrainBoots->getName(), allTerrainBoots->getDistance() });
+                    }
+                    else {
+                        std::cout << allTerrainBoots->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 2:
+                    if (broom->regist()) {
+                        results.push_back(Result{ broom->getName(), broom->getDistance() });
+                    }
+                    else {
+                        std::cout << broom->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 3:
+                    if (camel->regist()) {
+                        results.push_back(Result{ camel->getName(), camel->getDistance() });
+                    }
+                    else {
+                        std::cout << camel->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 4:
+                    if (centaur->regist()) {
+                        results.push_back(Result{ centaur->getName(), centaur->getDistance() });
+                    }
+                    else {
+                        std::cout << centaur->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 5:
+                    if (eagle->regist()) {
+                        results.push_back(Result{ eagle->getName(), eagle->getDistance() });
+                    }
+                    else {
+                        std::cout << eagle->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 6:
+                    if (fastCamel->regist()) {
+                        results.push_back(Result{ fastCamel->getName(), fastCamel->getDistance() });
+                    }
+                    else {
+                        std::cout << fastCamel->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                case 7:
+                    if (magicCarpet->regist()) {
+                        results.push_back(Result{ magicCarpet->getName(), magicCarpet->getDistance() });
+                    }
+                    else {
+                        std::cout << magicCarpet->getName() << " уже зарегистрирован!" << std::endl;
+                    }
+                    break;
+                }
+            } while (select != 0);
+        }
+    } while (select != 2 || results.size() < 2);
+}
