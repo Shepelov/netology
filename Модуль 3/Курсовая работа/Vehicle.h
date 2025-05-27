@@ -9,7 +9,7 @@ private:
 	bool registered;
 	int speed;
 	int distance;
-	std::wstring name;
+	std::string name;
 public:
 	Vehicle(int speed, std::string type, int distance, std::string &name) : 
 		speed(speed), 
