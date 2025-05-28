@@ -18,6 +18,6 @@ bool Vehicle::regist() {
 	}
 }
 
-std::wstring Vehicle::getName() {
+std::string Vehicle::getName() {
 	return name;
 }

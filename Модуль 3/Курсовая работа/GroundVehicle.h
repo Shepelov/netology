@@ -11,7 +11,7 @@ private:
 	double otherRest;
 	double restTime(int numberOfRests);
 public:
-	GroundVehicle(int speed, int timeToRest, int firstRest, int secondRest, int otherRest, int distance, std::string &name) :
+	GroundVehicle(int speed, int timeToRest, int firstRest, int secondRest, int otherRest, int distance, std::string name) :
 		Vehicle(speed, "ground", distance, name),
 		timeToRest (timeToRest),
 		firstRest(firstRest),

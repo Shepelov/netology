@@ -4,10 +4,8 @@
 #include "GroundVehicle.h"
 
 class Camel : public GroundVehicle {
-private:
-	std::string name = "Βεπαλώδ";
 public:
-	Camel(int distance) : GroundVehicle(10, 30, 5, 8, 8, distance, name) {}
+	Camel(int distance) : GroundVehicle(10, 30, 5, 8, 8, distance, "Βεπαδώδ") {}
 };
 
 #endif

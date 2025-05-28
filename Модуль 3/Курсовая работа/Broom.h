@@ -4,11 +4,9 @@
 #include "AirVehicle.h"
 
 class Broom : public AirVehicle {
-private:
-	std::string name = "Метла";
 public:
 	Broom (int distance) :
-		AirVehicle(20, reductionDistance(distance), name)
+		AirVehicle(20, reductionDistance(distance), "Метла")
 	{}
 	int reductionDistance(int distance);
 };

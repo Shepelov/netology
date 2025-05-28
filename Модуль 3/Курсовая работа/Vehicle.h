@@ -9,18 +9,18 @@ private:
 	bool registered;
 	int speed;
 	int distance;
-	std::wstring name;
+	std::string name;
 public:
-	Vehicle(int speed, std::string type, int distance, std::string &name) : 
-		speed(speed), 
-		type(type), 
-		registered(false), 
-		distance(distance),
-		name(name)
-		{}
+	Vehicle(int speed, std::string type, int distance, std::string name) {
+		this->speed = speed;
+		this->type = type;
+		this->registered = false;
+		this->distance = distance;
+		this->name = name;
+		}
 	double getSpeed();
 	int getDistance();
-	std::wstring getName();
+	std::string getName();
 	bool regist();
 };
 

@@ -4,11 +4,9 @@
 #include "AirVehicle.h"
 
 class MagicCarpet : public AirVehicle {
-private:
-	std::string name = "Ковер-самолёт";
 public:
 	MagicCarpet(int distance) : 
-		AirVehicle(10, reductionDistance(distance), name) 
+		AirVehicle(10, reductionDistance(distance), "Ковер-самолет")
 	{}
 	int reductionDistance(int distance);
 };

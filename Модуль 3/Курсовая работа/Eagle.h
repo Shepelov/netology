@@ -4,11 +4,9 @@
 #include "AirVehicle.h"
 
 class Eagle : public AirVehicle {
-private:
-	std::string name = "Îð¸ë";
 public:
 	Eagle (int distance) :
-		AirVehicle(8, reductionDistance(distance), name)
+		AirVehicle(8, reductionDistance(distance), "Îðåë")
 	{}
 	int reductionDistance(int distance);
 };

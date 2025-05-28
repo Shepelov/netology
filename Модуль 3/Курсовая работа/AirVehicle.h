@@ -6,7 +6,7 @@
 class AirVehicle : public Vehicle {
 
 public:
-	AirVehicle(int speed, int distance, std::string &name) :
+	AirVehicle(int speed, int distance, std::string name) :
 		Vehicle(speed, "air", distance, name)
 	{}
 	double getRaceTime();
