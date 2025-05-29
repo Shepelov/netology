@@ -1,10 +1,10 @@
-﻿#include "Camel.h"
-#include "FastCamel.h"
-#include "Centaur.h"
-#include "AllTerrainBoots.h"
-#include "MagicCarpet.h"
-#include "Eagle.h"
-#include "Broom.h"
+﻿#include "vehicles/Camel.h"
+#include "vehicles/FastCamel.h"
+#include "vehicles/Centaur.h"
+#include "vehicles/AllTerrainBoots.h"
+#include "vehicles/MagicCarpet.h"
+#include "vehicles/Eagle.h"
+#include "vehicles/Broom.h"
 
 #include <iostream>
 #include <Windows.h>
@@ -100,7 +100,10 @@ void race() {
                 if (results.size() != 0) {
                     std::cout << "Зарегистрированные транспортные средства: ";
                     for (int i = 0; i < results.size(); ++i) {
-                        std::cout << results[i].name << " ";
+                        if (i > 0) {
+                            std::cout << ", ";
+                        }
+                        std::cout << results[i].name;
                     }
                     std::cout << std::endl;
                 }
@@ -202,7 +205,11 @@ void race() {
 
     std::cout << "Таблица лидеров:" << std::endl;
     for (int i = 0; i < results.size(); ++i) {
-        std::cout << i+1 << ". " << results[i].name << "\t\t\t" << results[i].time << std::endl;
+        std::cout << i + 1 << ". " << results[i].name;
+        for (int j = 0; j < 20 - results[i].name.size(); ++j) {
+            std::cout << " ";
+        }
+        std::cout << results[i].time << std::endl;
     }
 
     delete allTerrainBoots;

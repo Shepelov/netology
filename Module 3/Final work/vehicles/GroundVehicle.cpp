@@ -3,6 +3,9 @@
 double GroundVehicle::getRaceTime() {
 	double time = getDistance() / getSpeed();
 	int numberOfRests = static_cast<int>(time) / timeToRest;
+	if (static_cast<int>(time) % timeToRest == 0) { //исключаем отдых на финише
+		numberOfRests--;
+	}
 	time = time + restTime(numberOfRests);
 
 	return time;
