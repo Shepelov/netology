@@ -25,7 +25,6 @@ int binarySearch(int array[], int arrayLength, int value) {
             rightValue = index;
         }
 
-        std::cout << array[index] << " " << value << " " << leftValue << " " << rightValue << std::endl;
         if (array[index] == value || rightValue - leftValue < 2) {
             searchDone = true;
         }
