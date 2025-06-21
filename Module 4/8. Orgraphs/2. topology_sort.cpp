@@ -2,7 +2,6 @@
 #include <Windows.h>
 #include <fstream>
 #include <string>
-#include <vector>
 
 int** read_matrix(int& matrix_size) {
     std::ifstream file("input.txt");
